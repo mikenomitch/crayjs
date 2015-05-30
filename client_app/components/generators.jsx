@@ -13,18 +13,28 @@ var Generators = React.createClass({
       yield i;
       yield* anotherGenerator(i);
       yield i + 10;
+      yield* anotherGenerator(i);
     }
 
     return generator(starter);
   },
 
-  genExample: makeGen(5),
-
   render: function(){
+    var exampleGen = this.makeGen(10)
+    var nextIt = function(){
+      var val = exampleGen.next().value
+      console.log(val)
+    }.bind(this)
+
     return(
-      <h3>
-        I am the Generators Component. - {genExample}
-      </h3>
+      <div>
+        <h3>
+          I am the Generators Component. - {exampleGen.next().value}
+        </h3>
+        <button onclick={nextIt}>
+          Press Me!
+        </button>
+      </div>
     )
   }
 })

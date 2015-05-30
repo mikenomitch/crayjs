@@ -1,3 +1,4 @@
+require("babel-core/polyfill")
 var React = require('react')
 
 // Router stuff

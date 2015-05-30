@@ -8,6 +8,9 @@ module.exports = {
     filename: "./app/assets/javascripts/bundle.js"
   },
   module: {
+    preLoaders: [
+      { test: /\.(jsx|jsx|js)$/, loader: "babel-loader" }
+    ],
     loaders: [
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" },
