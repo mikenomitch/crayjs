@@ -1,0 +1,15 @@
+ /** @jsx React.DOM */
+var React = window.React = require('react');
+
+var Returns = React.createClass({
+  render: function(){
+    var moose = fn {return "hey"}
+    return(
+      <h3>
+        I am the Returns Component. - {moose()}
+      </h3>
+    )
+  }
+})
+
+module.exports = Returns;

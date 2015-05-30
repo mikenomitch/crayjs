@@ -9,7 +9,7 @@ var RouteHandler = Router.RouteHandler
 
 // My Components
 var Navbar = require('./components/navbar.jsx')
-var Foo  = require('./components/foo.jsx')
+var Foo  = require('./components/returns.cray')
 var Bar  = require('./components/bar.jsx')
 var Baz  = require('./components/baz.jsx')
 
