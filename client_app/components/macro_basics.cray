@@ -6,7 +6,7 @@ var Returns = React.createClass({
     var moose = fn {return "hey"}
     return(
       <h3>
-        I am the Returns Component. - {moose()}
+        I am the basics of macros component. - {moose()}
       </h3>
     )
   }

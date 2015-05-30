@@ -5,11 +5,11 @@ var Navbar = React.createClass({
   render: function (){
     return(
       <div id="nav" className="container-fluid full_width">
-        <Link className="col-xs-4 col-sm-4" to="foo">
-          <span> Foo </span>
+        <Link className="col-xs-4 col-sm-4" to="macros">
+          <span> Macros </span>
         </Link>
-        <Link className="col-xs-4 col-sm-4" to="bar">
-          <span> Bar </span>
+        <Link className="col-xs-4 col-sm-4" to="generators">
+          <span> Generators </span>
         </Link>
         <Link className="col-xs-4 col-sm-4" to="baz">
           <span> Baz </span>

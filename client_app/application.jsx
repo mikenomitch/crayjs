@@ -9,8 +9,8 @@ var RouteHandler = Router.RouteHandler
 
 // My Components
 var Navbar = require('./components/navbar.jsx')
-var Foo  = require('./components/returns.cray')
-var Bar  = require('./components/bar.jsx')
+var MacroBasics  = require('./components/macro_basics.cray')
+var Generators  = require('./components/generators.jsx')
 var Baz  = require('./components/baz.jsx')
 
 var App = React.createClass({
@@ -28,10 +28,10 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="foo" path="foo" handler={Foo} />
-    <Route name="bar" path="bar" handler={Bar} />
+    <Route name="macros" path="macros" handler={MacroBasics} />
+    <Route name="generators" path="generators" handler={Generators} />
     <Route name="baz" path="baz" handler={Baz} />
-    <DefaultRoute name="default" handler={Foo} />
+    <DefaultRoute name="default" handler={MacroBasics} />
   </Route>
 )
 
