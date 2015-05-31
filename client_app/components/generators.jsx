@@ -1,37 +1,31 @@
 var React = require('react')
 
+var makeTicketer = function*(){
+  var i = 0;
+  while(true){
+    yield i;
+    i++;
+  }
+}
+
+var ticketer = makeTicketer()
+
 var Generators = React.createClass({
 
-  makeGen: function(starter){
-    function* anotherGenerator(i) {
-      yield i + 1;
-      yield i + 2;
-      yield i + 3;
-    }
 
-    function* generator(i){
-      yield i;
-      yield* anotherGenerator(i);
-      yield i + 10;
-      yield* anotherGenerator(i);
-    }
-
-    return generator(starter);
+  takeTicket: function(){
+    console.log("taking ticket:")
+    var val = ticketer.next().value
+    console.log(val)
   },
 
   render: function(){
-    var exampleGen = this.makeGen(10)
-    var nextIt = function(){
-      var val = exampleGen.next().value
-      console.log(val)
-    }.bind(this)
-
     return(
       <div>
         <h3>
-          I am the Generators Component. - {exampleGen.next().value}
+          I am the Generators Component.
         </h3>
-        <button onclick={nextIt}>
+        <button onClick={this.takeTicket}>
           Press Me!
         </button>
       </div>

@@ -12,16 +12,16 @@ var RouteHandler = Router.RouteHandler
 var Navbar = require('./components/navbar.jsx')
 var MacroBasics  = require('./components/macro_basics.cray')
 var Generators  = require('./components/generators.jsx')
-var Baz  = require('./components/baz.jsx')
+var Colors  = require('./components/colors.jsx')
 
 var App = React.createClass({
   render: function(){
     return(
       <div>
         <Navbar />
-        This text is in application.jsx: when a child route is active, a child component shows up below it.
-        See the react-router documentation for more info.
-        <RouteHandler />
+        <div style={{display: "inline-block"}}>
+          <RouteHandler />
+        </div>
       </div>
     )
   }
@@ -31,7 +31,7 @@ var routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="macros" path="macros" handler={MacroBasics} />
     <Route name="generators" path="generators" handler={Generators} />
-    <Route name="baz" path="baz" handler={Baz} />
+    <Route name="colors" path="colors" handler={Colors} />
     <DefaultRoute name="default" handler={MacroBasics} />
   </Route>
 )

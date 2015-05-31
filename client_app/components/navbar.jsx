@@ -2,17 +2,26 @@ var React = require('react')
 var Link = require('react-router').Link
 
 var Navbar = React.createClass({
+  divStyle:{
+    width: "200px",
+    display: "inline-block"
+  },
+
+  linkStyle:{
+    display: "block"
+  },
+
   render: function (){
     return(
-      <div id="nav" className="container-fluid full_width">
-        <Link className="col-xs-4 col-sm-4" to="macros">
+      <div id="nav" style={this.divStyle}>
+        <Link style={this.linkStyle} to="macros">
           <span> Macros </span>
         </Link>
-        <Link className="col-xs-4 col-sm-4" to="generators">
+        <Link style={this.linkStyle} to="generators">
           <span> Generators </span>
         </Link>
-        <Link className="col-xs-4 col-sm-4" to="baz">
-          <span> Baz </span>
+        <Link style={this.linkStyle} to="colors">
+          <span> Colors </span>
         </Link>
       </div>
     )
