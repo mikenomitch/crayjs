@@ -1,0 +1,80 @@
+ /** @jsx React.DOM */
+var React = window.React = require('react');
+
+var CrayJs = React.createClass({
+
+  // shortDef: fn{return "hey return me"},
+
+  shortDef: function(){
+    // return "hey return me"
+    console.log("hey return me");
+    return "foo";
+  },
+
+  // implicitRet: rfn(){
+  //   console.log("doin some stuff");
+  //   console.log("doin some more stuff");
+  //   "I wonder if I'll be returned"
+  // },
+
+  implicitRet: function(){
+    console.log("ugh");
+    return "ugh";
+  },
+
+  lambdaJam: function(){
+    console.log("clicked lam");
+  },
+
+  pileline: function(){
+    console.log("clicked pileline");
+  },
+
+  unlessExample: function(){
+    // https://github.com/locks/candyshop
+    console.log("clicked unless example");
+  },
+
+  render: function(){
+    holderStyle = {height: "40px"};
+    return(
+      <div>
+        <h3> An Example: </h3>
+
+        <p> What are the best parts of Coffeescript? Let's steal them.</p>
+
+        <button onClick={this.shortDef}>
+          short function definitions
+        </button>
+        <div style={holderStyle} ref="short"/>
+
+        <button onClick={this.implicitRet}>
+          implicit returns
+        </button>
+        <div style={holderStyle} ref="implicit"/>
+
+        <button onClick={this.unlessExample}>
+          unlessExample
+        </button>
+        <div style={holderStyle} ref="unlessExample"/>
+
+        <p> People have ported almost all of ES6 to sweetjs too! Including classes :)</p>
+
+        <p> And maybe sme cool stuff from clojure:</p>
+
+        <button onClick={this.lambdaJam}>
+          cool new lambdas
+        </button>
+        <div style={holderStyle} ref="lamjam"/>
+
+        <button onClick={this.pipeline}>
+          pipelining
+        </button>
+        <div style={holderStyle} ref="pipeline"/>
+
+      </div>
+    );
+  }
+});
+
+module.exports = CrayJs;

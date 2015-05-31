@@ -1,15 +1,22 @@
  /** @jsx React.DOM */
 var React = window.React = require('react');
 
-var Returns = React.createClass({
+var MacrosIntro = React.createClass({
   render: function(){
-    var moose = fn {return "hey"}
     return(
-      <h3>
-        I am the basics of macros component. - {moose()}
-      </h3>
+      <div>
+        <h3> What are macros? </h3>
+        <p> A way to extend your language at compile time. </p>
+        <p> Origins come from Lisp but they exist in a bunch of languages. </p>
+        <p> Need some sore of preprocessing step. - ergo ruby can't have them but you can always monkey patch Kernel :D</p>
+
+        <div>
+          Here is an <a href="http://sweetjs.org/browser/editor.html"> example </a>
+        </div>
+
+      </div>
     )
   }
 })
 
-module.exports = Returns;
+module.exports = MacrosIntro;

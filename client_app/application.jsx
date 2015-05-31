@@ -11,7 +11,9 @@ var RouteHandler = Router.RouteHandler
 // My Components
 var Navbar = require('./components/navbar.jsx')
 var MacroBasics  = require('./components/macro_basics.cray')
+var CrayJs  = require('./components/macros_example.cray')
 var Generators  = require('./components/generators.jsx')
+var WhyGenerators  = require('./components/why_generators.jsx')
 var Colors  = require('./components/colors.jsx')
 
 var App = React.createClass({
@@ -30,7 +32,9 @@ var App = React.createClass({
 var routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="macros" path="macros" handler={MacroBasics} />
+    <Route name="crayjs" path="crayjs" handler={CrayJs} />
     <Route name="generators" path="generators" handler={Generators} />
+    <Route name="whyGenerators" path="whyGenerators" handler={WhyGenerators} />
     <Route name="colors" path="colors" handler={Colors} />
     <DefaultRoute name="default" handler={MacroBasics} />
   </Route>

@@ -3,6 +3,7 @@ var Link = require('react-router').Link
 
 var Navbar = React.createClass({
   divStyle:{
+    height: "1000px",
     width: "200px",
     display: "inline-block"
   },
@@ -15,13 +16,35 @@ var Navbar = React.createClass({
     return(
       <div id="nav" style={this.divStyle}>
         <Link style={this.linkStyle} to="macros">
-          <span> Macros </span>
+          <span> Macros Intro </span>
         </Link>
+
+        <Link style={this.linkStyle} to="crayjs">
+          <span> Some Usage </span>
+        </Link>
+
         <Link style={this.linkStyle} to="generators">
           <span> Generators </span>
         </Link>
-        <Link style={this.linkStyle} to="colors">
-          <span> Colors </span>
+
+        <Link style={this.linkStyle} to="whyGenerators">
+          <span> Why Generators? </span>
+        </Link>
+
+        <Link style={this.linkStyle} to="generators">
+          <span> CSP Intro </span>
+        </Link>
+
+        <Link style={this.linkStyle} to="generators">
+          <span> CSP Example 1 </span>
+        </Link>
+
+        <Link style={this.linkStyle} to="generators">
+          <span> CSP Example Two </span>
+        </Link>
+
+        <Link style={this.linkStyle} to="generators">
+          <span> All Together </span>
         </Link>
       </div>
     )
