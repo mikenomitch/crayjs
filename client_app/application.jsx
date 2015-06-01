@@ -14,7 +14,10 @@ var MacroBasics  = require('./components/macro_basics.cray')
 var CrayJs  = require('./components/macros_example.cray')
 var Generators  = require('./components/generators.jsx')
 var WhyGenerators  = require('./components/why_generators.jsx')
-var Colors  = require('./components/colors.jsx')
+var CSPIntro  = require('./components/csp_intro.jsx')
+var CSPOne  = require('./components/csp_one.jsx')
+var CSPTwo  = require('./components/csp_one.jsx')
+var AllTogether  = require('./components/all_together.cray')
 
 var App = React.createClass({
   render: function(){
@@ -35,7 +38,10 @@ var routes = (
     <Route name="crayjs" path="crayjs" handler={CrayJs} />
     <Route name="generators" path="generators" handler={Generators} />
     <Route name="whyGenerators" path="whyGenerators" handler={WhyGenerators} />
-    <Route name="colors" path="colors" handler={Colors} />
+    <Route name="cspIntro" path="cspIntro" handler={CSPIntro} />
+    <Route name="cspOne" path="cspOne" handler={CSPOne} />
+    <Route name="cspTwo" path="cspTwo" handler={CSPTwo} />
+    <Route name="allTogether" path="allTogether" handler={AllTogether} />
     <DefaultRoute name="default" handler={MacroBasics} />
   </Route>
 )

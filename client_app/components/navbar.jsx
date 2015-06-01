@@ -31,19 +31,19 @@ var Navbar = React.createClass({
           <span> Why Generators? </span>
         </Link>
 
-        <Link style={this.linkStyle} to="generators">
+        <Link style={this.linkStyle} to="cspIntro">
           <span> CSP Intro </span>
         </Link>
 
-        <Link style={this.linkStyle} to="generators">
+        <Link style={this.linkStyle} to="cspOne">
           <span> CSP Example 1 </span>
         </Link>
 
-        <Link style={this.linkStyle} to="generators">
+        <Link style={this.linkStyle} to="cspTwo">
           <span> CSP Example Two </span>
         </Link>
 
-        <Link style={this.linkStyle} to="generators">
+        <Link style={this.linkStyle} to="allTogether">
           <span> All Together </span>
         </Link>
       </div>

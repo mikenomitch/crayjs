@@ -4,7 +4,7 @@ var Foo = React.createClass({
   render: function(){
     return(
       <div>
-        I am the Foo Component
+        All Together
       </div>
     )
   }
