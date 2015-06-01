@@ -1,4 +1,5 @@
 var React = require('react')
+var csp = require('js-csp')
 
 var Foo = React.createClass({
   render: function(){
