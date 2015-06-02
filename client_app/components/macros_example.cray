@@ -35,6 +35,10 @@ var CrayJs = React.createClass({
     console.log("clicked unless example");
   },
 
+  doubleEquals: function(){
+    console.log("clicked doubleEquals example");
+  },
+
   render: function(){
     holderStyle = {height: "40px"};
     return(
@@ -57,6 +61,11 @@ var CrayJs = React.createClass({
           unlessExample
         </button>
         <div style={holderStyle} ref="unlessExample"/>
+
+        <button onClick={this.doubleEquals}>
+          double vs triple equals
+        </button>
+        <div style={holderStyle} ref="doubleEquals"/>
 
         <p> People have ported almost all of ES6 to sweetjs too! Including classes :)</p>
 
