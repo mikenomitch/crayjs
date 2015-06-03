@@ -12,7 +12,7 @@ var CrayJs = React.createClass({
 
   unlessExample: function(){
     console.log("one does not equal two") unless 1 == 2
-    console.log("one does equal two") unless 2 == 2
+    console.log("two does not equal two") unless 2 == 2
   },
 
   doubleEquals: function(){
@@ -35,9 +35,27 @@ var CrayJs = React.createClass({
   },
 
   pipeline: function(){
-    console.log("-------------");
-    console.log("clicked doubleEquals example");
-    console.log("-------------");
+    var combineWithOthers = function(a,b,c){
+      return (b + c + a)
+    }
+
+    var capitalize = function(doFullString, str){
+      if(doFullString){
+        return str.toUpperCase();
+      }else{
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+    }
+
+    var logWithBorders = function(str){
+      console.log("-------------");
+      console.log(str);
+      console.log("-------------");
+    }
+
+    "foo" |> combineWithOthers("bar", "baz")
+          |> capitalize(true)
+          |> logWithBorders()
   },
 
   render: function(){

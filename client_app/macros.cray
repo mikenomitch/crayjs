@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let @ = macro {
   rule { ; } => { this; }
   rule { , } => { this, }
@@ -6,6 +23,26 @@ let @ = macro {
 }
 
 export @;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let unless = macro {
@@ -44,9 +81,50 @@ let unless = macro {
 
 export unless;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 operator == 9 left { $l, $r } => #{ $l === $r }
 
 export ==;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let lam = macro {
@@ -107,3 +185,57 @@ let lam = macro {
 }
 
 export lam;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+operator (|>) 14 left { $lhs, $rhs } => #{ thread $lhs $rhs }
+export (|>);
+
+macro thread {
+  rule { $lhs ($method:part()) } => {
+    $method($lhs)
+  }
+  rule { $lhs ($method:part($args:expr (,) ...)) } => {
+    $method($args (,) ..., $lhs)
+  }
+  case { _ _ ($tok ...) } => {
+    throwSyntaxError('|>', 'Expected function call', #{ $tok ... })
+  }
+}
+// We can be a little loose with our parsing since `operator` guarantees
+// that we have a fully expanded, valid expression.
+macro part {
+  rule { ($e ...) . $next:part }
+  rule { ($e ...) }
+  rule { $name:ident[$e ...] . $next:part }
+  rule { $name:ident($e ...) . $next:part }
+  rule { $name:ident . $next:part }
+  rule { $name:ident[$e ...] }
+  rule { $name:ident }
+  rule { new $ctr:part }
+}
+
+export |>;
+
+

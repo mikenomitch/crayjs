@@ -3,11 +3,8 @@ var csp = require('js-csp')
 
 var MouseExample = React.createClass({
   componentDidMount: function(){
-
-    var el = document.getElementById("holder");
-
-    function show(text) {
-      el.textContent = text
+    function showText(text) {
+      document.getElementById("holder").textContent = text
     }
 
     function movementFirehose(element, eventName) {
@@ -28,29 +25,24 @@ var MouseExample = React.createClass({
       return ch
     }
 
-
-    // DO THE ALTS THING!!!
-
-    // http://go.cognitect.com/core_async_webinar_recording
-
+    var clicks = clickWatch(document.body, "click")
 
     csp.go(function*() {
       while(true) {
-        show("Click the button to track mouse movement")
+        showText("Click the button to track mouse movement")
+        yield clicks
         // break if mouse channel returns something
         while(true) {
-          var result = yield csp.alts([moves, csp.timeout(50)]);
-          var value = result.value;
-          if (value === csp.CLOSED) {
-            console.log("value === csp.CLOSED")
-            console.log(csp)
-            show("STOP")
+          var result = yield csp.alts([moves, clicks]);
+
+          var event = result.value
+          var eventType = event.type;
+
+          if (eventType === "click") {
             break
           }
-        console.log("value === csp.CLOSED")
-        console.log(csp)
-        event = value;
-        show(event.x + ":" + event.y)
+
+          showText(event.x + ":" + event.y)
         }
       }
     })
@@ -60,7 +52,17 @@ var MouseExample = React.createClass({
     return(
       <div>
         <h3>CSP Mouse Example</h3>
-        <div id="holder" />
+
+        <br /><br /><br />
+        <h4 id="holder" />
+        <br /><br /><br />
+
+        <p> note: this was stolen from
+          <a href="http://go.cognitect.com/core_async_webinar_recording">
+            'http://go.cognitect.com/core_async_webinar_recording'
+          </a>
+        </p>
+
       </div>
     )
   }

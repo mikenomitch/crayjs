@@ -16,7 +16,7 @@ var Generators  = require('./components/generators.jsx')
 var WhyGenerators  = require('./components/why_generators.jsx')
 var CSPIntro  = require('./components/csp_intro.jsx')
 var CSPOne  = require('./components/csp_one.jsx')
-var CSPTwo  = require('./components/csp_one.jsx')
+var CSPTwo  = require('./components/csp_two.jsx')
 var AllTogether  = require('./components/all_together.cray')
 
 var App = React.createClass({
