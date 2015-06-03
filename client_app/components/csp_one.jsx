@@ -29,7 +29,7 @@ var MouseExample = React.createClass({
 
     csp.go(function*() {
       while(true) {
-        showText("Click the button to track mouse movement")
+        showText("Click to track the mouse")
         yield clicks
         // break if mouse channel returns something
         while(true) {
@@ -42,7 +42,7 @@ var MouseExample = React.createClass({
             break
           }
 
-          showText(event.x + ":" + event.y)
+          showText(event.x + ":" + event.y + "     -    click to stop")
         }
       }
     })
@@ -59,7 +59,7 @@ var MouseExample = React.createClass({
 
         <p> note: this was stolen from
           <a href="http://go.cognitect.com/core_async_webinar_recording">
-            'http://go.cognitect.com/core_async_webinar_recording'
+            nolen
           </a>
         </p>
 

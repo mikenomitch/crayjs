@@ -108,13 +108,23 @@ export ==;
 
 
 
+syn js
 
 
 
+let var = macro {
+  rule { [$var (,) ...] = $obj:expr } => {
+    var i = 0;
+    var arr = $obj;
+    $(var $var = arr[i++]) (;) ...
+  }
 
+  rule { $id } => {
+    var $id
+  }
+}
 
-
-
+export var;
 
 
 

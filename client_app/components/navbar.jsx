@@ -36,11 +36,11 @@ var Navbar = React.createClass({
         </Link>
 
         <Link style={this.linkStyle} to="cspOne">
-          <span> CSP Example 1 </span>
+          <span> CSP Mouse Example </span>
         </Link>
 
         <Link style={this.linkStyle} to="cspTwo">
-          <span> CSP Example Two </span>
+          <span> CSP 'Store' Example </span>
         </Link>
 
         <Link style={this.linkStyle} to="allTogether">

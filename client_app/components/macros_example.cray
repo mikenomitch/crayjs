@@ -4,24 +4,52 @@ var _ = require('lodash')
 
 var CrayJs = React.createClass({
 
+
+
+
+
   whoa: function(){
     console.log("-------------");
     console.log("whoa I was called")
     console.log("-------------");
   },
 
+
+
+
+
+
   unlessExample: function(){
     console.log("one does not equal two") unless 1 == 2
     console.log("two does not equal two") unless 2 == 2
   },
 
+
+
+
+
   doubleEquals: function(){
     console.log("-------------");
-    console.log("1 == \'1\'");
     console.log("1" == 1);
-    console.log("what would this look like in js");
     console.log("-------------");
   },
+
+
+
+
+
+
+  destructureMe: function(){
+    var [a,b,c] = [1,2,3]
+    console.log("-------------");
+    console.log(b)
+    console.log("-------------");
+  },
+
+
+
+
+
 
   lambdaJam: function(){
     var numbers = [1,2,3,4]
@@ -33,6 +61,13 @@ var CrayJs = React.createClass({
     console.log(theSum);
     console.log("-------------");
   },
+
+
+
+
+
+
+
 
   pipeline: function(){
     var combineWithOthers = function(a,b,c){
@@ -58,6 +93,12 @@ var CrayJs = React.createClass({
           |> logWithBorders()
   },
 
+
+
+
+
+
+
   render: function(){
     holderStyle = {height: "40px"};
     return(
@@ -68,17 +109,22 @@ var CrayJs = React.createClass({
         <button onClick={this.unlessExample}>
           unless is cool
         </button>
-        <div style={holderStyle} ref="unlessExample"/>
+        <br /><br />
 
         <button onClick={this.doubleEquals}>
           double vs triple equals is nice
         </button>
-        <div style={holderStyle} ref="doubleEquals"/>
+        <br /><br />
 
         <button onClick={@whoa}>
           the @ symbol aint bad
         </button>
-        <div style={holderStyle} ref="doubleEquals"/>
+        <br /><br />
+
+        <button onClick={this.destructureMe}>
+          destructuring
+        </button>
+        <br /><br />
 
         <p> People have ported almost all of ES6 to sweetjs too! Including classes :)</p>
 
@@ -87,13 +133,14 @@ var CrayJs = React.createClass({
         <button onClick={this.lambdaJam}>
           cool lambda syntax
         </button>
-        <div style={holderStyle} ref="lamjam"/>
+        <br /><br />
 
         <button onClick={this.pipeline}>
           pipelining
         </button>
-        <div style={holderStyle} ref="pipeline"/>
+        <br /><br />
 
+        <p> PS: I didnt write these - in case that isnt obvious</p>
       </div>
     );
   }

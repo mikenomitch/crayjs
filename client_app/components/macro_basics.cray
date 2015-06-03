@@ -8,12 +8,23 @@ var MacrosIntro = React.createClass({
         <h3> What are macros? </h3>
         <p> A way to extend your language at compile time. </p>
         <p> Origins come from Lisp but they exist in a bunch of languages. </p>
-        <p> Need some sore of preprocessing step. - ergo ruby can't have them but you can always monkey patch Kernel :D</p>
+        <p> Need some sort of preprocessing step. - ergo ruby can't have them but you can always monkey patch Kernel :D</p>
 
-        <div>
+        <p>
+          In JS there is something called <a href="https://github.com/mozilla/sweet.js">sweet js</a> that allows us to define one off-transpilation rules... what we're calling macros (in this context).
+        </p>
+
+        <p>
           Here is an <a href="http://sweetjs.org/browser/editor.html"> example </a>
-        </div>
+        </p>
 
+        <p>
+          (note to mike: now show your webpack config)
+        </p>
+
+        <p>
+        note: I think this is harder than lisp because of how the language is structured - also it is missing things like <a href="https://github.com/mozilla/sweet.js/issues/382">backticks</a>
+        </p>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 require("babel-core/polyfill")
+require("./style.css")
 var React = require('react')
 
 // Router stuff
