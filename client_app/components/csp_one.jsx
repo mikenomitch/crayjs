@@ -57,10 +57,8 @@ var MouseExample = React.createClass({
         <h4 id="holder" />
         <br /><br /><br />
 
-        <p> note: this was stolen from
-          <a href="http://go.cognitect.com/core_async_webinar_recording">
-            nolen
-          </a>
+        <p>
+          note: stolen from <a href="http://go.cognitect.com/core_async_webinar_recording"> nolen </a>
         </p>
 
       </div>
