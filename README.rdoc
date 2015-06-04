@@ -2,8 +2,6 @@
 
 code for the chillstructure talk I gave on macros, generators and CSP
 
-<br />
 
 check out client_app for the components and macros
 
-<br />
