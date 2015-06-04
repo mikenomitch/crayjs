@@ -9,6 +9,11 @@ var UserChannel = csp.chan()
 // =====================
 
 setInterval(function(){
+
+  var resp = axios.get('/users')
+  console.log(resp)
+  csp.putAsync(UserChannel, response.data)
+
   axios.get('/users')
     .then(function (response) {
       csp.putAsync(UserChannel, response.data)

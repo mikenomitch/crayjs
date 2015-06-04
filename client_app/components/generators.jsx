@@ -4,26 +4,29 @@ var makeTicketer = function*(){
   var i = 0;
   while(true){
     yield i;
-    yield "incrementing..."
+    yield "ripping ticket"
     i++;
   }
 }
 
-var ticketerOne = makeTicketer()
-var ticketerTwo = makeTicketer()
+var deliTicketer = makeTicketer()
+var bakeryTicketer = makeTicketer()
 
 var Generators = React.createClass({
 
-  takeTicketFromOne: function(){
-    var val = ticketerOne.next().value
-    var holder = this.refs.holderOne.getDOMNode()
-    holder.innerHTML = val
+  takeTicket: function(counter, el){
+    var val = counter.next().value
+    el.innerHTML = val
   },
 
-  takeTicketFromTwo: function(){
-    var val = ticketerTwo.next().value
-    var holder = this.refs.holderTwo.getDOMNode()
-    holder.innerHTML = val
+  takeDeliTicket: function(){
+    var myEL = this.refs.holderOne.getDOMNode()
+    this.takeTicket(deliTicketer, myEL)
+  },
+
+  takeBakeryTicket: function(){
+    var myEL = this.refs.holderTwo.getDOMNode()
+    this.takeTicket(bakeryTicketer, myEL)
   },
 
   render: function(){
@@ -33,17 +36,23 @@ var Generators = React.createClass({
           A Simple Generator Example:
         </h3>
 
-        <button onClick={this.takeTicketFromOne}>
-          I will give you a number:
+        <p> There is a deli line and a bakery line </p>
+
+        <button onClick={this.takeDeliTicket}>
+          Give Deli Ticket
         </button>
 
+        <br /><br />
         <div style={{height: "20px"}} ref="holderOne"/>
+        <br /><br />
 
-        <button onClick={this.takeTicketFromTwo}>
-          I do the same thing with separate state:
+        <button onClick={this.takeBakeryTicket}>
+          Give Bakery Ticket
         </button>
 
+        <br /><br />
         <div style={{height: "20px"}} ref="holderTwo"/>
+        <br /><br />
 
       </div>
     )

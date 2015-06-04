@@ -9,7 +9,6 @@ var CrayJs = React.createClass({
 
 
   whoa: function(){
-    console.log("-------------");
     console.log("whoa I was called")
     console.log("-------------");
   },
@@ -22,6 +21,7 @@ var CrayJs = React.createClass({
   unlessExample: function(){
     console.log("one does not equal two") unless 1 == 2
     console.log("two does not equal two") unless 2 == 2
+    console.log("-------------");
   },
 
 
@@ -29,7 +29,6 @@ var CrayJs = React.createClass({
 
 
   doubleEquals: function(){
-    console.log("-------------");
     console.log("1" == 1);
     console.log("-------------");
   },
@@ -41,7 +40,6 @@ var CrayJs = React.createClass({
 
   destructureMe: function(){
     var [a,b,c] = [1,2,3]
-    console.log("-------------");
     console.log(b)
     console.log("-------------");
   },
@@ -57,7 +55,6 @@ var CrayJs = React.createClass({
       numbers,
       lam(_1 + _2)
     )
-    console.log("-------------");
     console.log(theSum);
     console.log("-------------");
   },
@@ -82,15 +79,14 @@ var CrayJs = React.createClass({
       }
     }
 
-    var logWithBorders = function(str){
-      console.log("-------------");
+    var logWithBorder = function(str){
       console.log(str);
       console.log("-------------");
     }
 
     "foo" |> combineWithOthers("bar", "baz")
           |> capitalize(true)
-          |> logWithBorders()
+          |> logWithBorder()
   },
 
 

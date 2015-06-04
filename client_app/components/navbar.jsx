@@ -5,7 +5,8 @@ var Navbar = React.createClass({
   divStyle:{
     height: "1000px",
     width: "200px",
-    display: "inline-block"
+    display: "inline-block",
+    float: "left"
   },
 
   linkStyle:{
