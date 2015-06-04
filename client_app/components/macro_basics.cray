@@ -7,7 +7,7 @@ var MacrosIntro = React.createClass({
       <div>
         <h3> What are macros? </h3>
         <p> A way to extend your language at compile time. </p>
-        <p> Origins come from Lisp but they exist in a bunch of languages. </p>
+        <p> Origins come from <a href="https://clojuredocs.org/clojure.core/-%3E">Lisp</a> but they exist in a bunch of languages. </p>
         <p> Need some sort of preprocessing step. - ergo ruby can't have them but you can always monkey patch Kernel :D</p>
 
         <p>
@@ -24,6 +24,23 @@ var MacrosIntro = React.createClass({
 
         <p>
         note: I think this is harder than lisp because of how the language is structured - also it is missing things like <a href="https://github.com/mozilla/sweet.js/issues/382">backticks</a>
+        </p>
+
+        <p>
+        sweet.js gives us a formal language for extending the language <br />
+        matchers like :ident (for vars), :lit (for literals), :expr (for expressions) <br />
+        given some macro keyword => some template based on pattern matching
+        </p>
+
+        <p>
+          <a href="https://github.com/jlongster/emojiscript">The most important thing about macros</a>
+        </p>
+
+        <p>
+          <i> come back to these at the end: </i>
+            <a href='https://gist.github.com/jlongster/57ad73756529a5dcc4de'>foo </a>
+            and
+            <a href='https://github.com/srikumarks/cspjs'> bar</a>
         </p>
       </div>
     )

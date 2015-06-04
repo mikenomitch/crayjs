@@ -16,16 +16,20 @@ var Navbar = React.createClass({
   render: function (){
     return(
       <div id="nav" style={this.divStyle}>
-        <Link style={this.linkStyle} to="macros">
-          <span> Macros Intro </span>
+        <Link style={this.linkStyle} to="getPumped">
+          <span> Get Pumped </span>
         </Link>
 
         <Link style={this.linkStyle} to="crayjs">
-          <span> Some Usage </span>
+          <span> CRAY </span>
+        </Link>
+
+        <Link style={this.linkStyle} to="macros">
+          <span> IIFYM </span>
         </Link>
 
         <Link style={this.linkStyle} to="generators">
-          <span> Generators </span>
+          <span> Waiting in Line </span>
         </Link>
 
         <Link style={this.linkStyle} to="whyGenerators">
@@ -33,20 +37,17 @@ var Navbar = React.createClass({
         </Link>
 
         <Link style={this.linkStyle} to="cspIntro">
-          <span> CSP Intro </span>
+          <span> CSP </span>
         </Link>
 
         <Link style={this.linkStyle} to="cspOne">
-          <span> CSP Mouse Example </span>
+          <span> Mouse Hunt </span>
         </Link>
 
         <Link style={this.linkStyle} to="cspTwo">
-          <span> CSP 'Store' Example </span>
+          <span> AIM </span>
         </Link>
 
-        <Link style={this.linkStyle} to="allTogether">
-          <span> All Together </span>
-        </Link>
       </div>
     )
   }

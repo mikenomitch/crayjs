@@ -1,23 +1,19 @@
 var React = require('react')
 var axios = require('axios')
 var csp = require('js-csp')
+var suspend = require('suspend')
 
-var UserChannel = csp.chan()
+var UserChannel = csp.chan(1)
 
 // =====================
 //   Store Type Thingy
 // =====================
 
 setInterval(function(){
-
-  var resp = axios.get('/users')
-  console.log(resp)
-  csp.putAsync(UserChannel, response.data)
-
-  axios.get('/users')
-    .then(function (response) {
-      csp.putAsync(UserChannel, response.data)
-    })
+  suspend(function*() {
+    var response = yield axios.get('/users');
+    csp.putAsync(UserChannel, response.data)
+  })();
 }, 3000);
 
 // =====================
@@ -33,7 +29,9 @@ var BuddyList = React.createClass({
 
     csp.go(function*() {
       while(true) {
-        setNewUsers(yield UserChannel)
+        var chanResponse = yield UserChannel
+        if(chanResponse == csp.CLOSED){ break }
+        setNewUsers(chanResponse)
       }
     })
   },
@@ -54,8 +52,13 @@ var BuddyList = React.createClass({
   },
 
   signMeOff: function(){
+    UserChannel.close()
     this.setState({signedOn: false})
   },
+
+  // takeTheDefault: function(){
+  //   csp.takeAsync(UserChannel, function(value) { console.log("Got ", value)})
+  // },
 
   render: function(){
     if(this.state.signedOn){
@@ -65,6 +68,7 @@ var BuddyList = React.createClass({
           <button style={{"background-color": "red"}} onClick={this.signMeOff}>
             Sign Off
           </button>
+
           <h3> Active Users: </h3>
           <ul>
             {this.state.users.map(this.buddy, this)}

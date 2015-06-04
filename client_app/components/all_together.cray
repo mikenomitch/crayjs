@@ -1,13 +1,13 @@
 var React = require('react')
 
-var Foo = React.createClass({
+var Colors = React.createClass({
   render: function(){
     return(
       <div>
-        All Together
+        colors woo
       </div>
     )
   }
 })
 
-module.exports = Foo
+module.exports = Colors

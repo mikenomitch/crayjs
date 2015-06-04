@@ -5,13 +5,13 @@ var React = require('react')
 // Router stuff
 var Router = require('react-router')
 var DefaultRoute = Router.DefaultRoute
-var Link = Router.Link
 var Route = Router.Route
 var RouteHandler = Router.RouteHandler
 
 // My Components
 var Navbar = require('./components/navbar.jsx')
 var MacroBasics  = require('./components/macro_basics.cray')
+var GetPumped  = require('./components/get_pumped.jsx')
 var CrayJs  = require('./components/macros_example.cray')
 var Generators  = require('./components/generators.jsx')
 var WhyGenerators  = require('./components/why_generators.jsx')
@@ -35,15 +35,16 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="macros" path="macros" handler={MacroBasics} />
+    <Route name="getPumped" path="getPumped" handler={GetPumped} />
     <Route name="crayjs" path="crayjs" handler={CrayJs} />
+    <Route name="macros" path="macros" handler={MacroBasics} />
     <Route name="generators" path="generators" handler={Generators} />
     <Route name="whyGenerators" path="whyGenerators" handler={WhyGenerators} />
     <Route name="cspIntro" path="cspIntro" handler={CSPIntro} />
     <Route name="cspOne" path="cspOne" handler={CSPOne} />
     <Route name="cspTwo" path="cspTwo" handler={CSPTwo} />
     <Route name="allTogether" path="allTogether" handler={AllTogether} />
-    <DefaultRoute name="default" handler={MacroBasics} />
+    <DefaultRoute name="default" handler={GetPumped} />
   </Route>
 )
 

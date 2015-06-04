@@ -5,16 +5,10 @@ var _ = require('lodash')
 var CrayJs = React.createClass({
 
 
-
-
-
   whoa: function(){
     console.log("whoa I was called")
     console.log("-------------");
   },
-
-
-
 
 
 
@@ -25,17 +19,10 @@ var CrayJs = React.createClass({
   },
 
 
-
-
-
   doubleEquals: function(){
     console.log("1" == 1);
     console.log("-------------");
   },
-
-
-
-
 
 
   destructureMe: function(){
@@ -43,9 +30,6 @@ var CrayJs = React.createClass({
     console.log(b)
     console.log("-------------");
   },
-
-
-
 
 
 
@@ -58,12 +42,6 @@ var CrayJs = React.createClass({
     console.log(theSum);
     console.log("-------------");
   },
-
-
-
-
-
-
 
 
   pipeline: function(){
@@ -90,41 +68,34 @@ var CrayJs = React.createClass({
   },
 
 
-
-
-
-
-
   render: function(){
     holderStyle = {height: "40px"};
     return(
       <div>
-        <h3> Some Examples: </h3>
-        <p> What are the best parts of Coffeescript? Lets steal them.</p>
+        <h3> Introducing Cray: </h3>
+        <p> With the perks of coffeescript...</p>
 
         <button onClick={this.unlessExample}>
-          unless is cool
+          'unless'
         </button>
         <br /><br />
 
         <button onClick={this.doubleEquals}>
-          double vs triple equals is nice
+          no more doulbe equals
         </button>
         <br /><br />
 
         <button onClick={@whoa}>
-          the @ symbol aint bad
+          get @ me
         </button>
         <br /><br />
 
         <button onClick={this.destructureMe}>
-          destructuring
+          destructure for instructure
         </button>
         <br /><br />
 
-        <p> People have ported almost all of ES6 to sweetjs too! Including classes :)</p>
-
-        <p> And maybe sme cool stuff from clojure:</p>
+        <p> throw in some cool stuff from clojure:</p>
 
         <button onClick={this.lambdaJam}>
           cool lambda syntax
@@ -132,11 +103,9 @@ var CrayJs = React.createClass({
         <br /><br />
 
         <button onClick={this.pipeline}>
-          pipelining
+          pipelines
         </button>
         <br /><br />
-
-        <p> PS: I didnt write these - in case that isnt obvious</p>
       </div>
     );
   }
